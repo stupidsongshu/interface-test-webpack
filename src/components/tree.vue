@@ -1,6 +1,6 @@
 <template>
   <div class="treeWrapper">
-    <div v-if="node.name">
+		<div v-if="node.name">
 			<div>
 				<button class="btn btn-info" @click="add">+</button>
 				<button class="btn btn-danger" @click="remove">-</button>
@@ -10,15 +10,15 @@
 					<option v-for="option in options" :value="option.value">{{option.name}}</option>
 				</select>
 			</div>
-    </div>
-    <!-- 如果存在 children 的话，循环创建节点 -->
-    <tree
+		</div>
+		<!-- 如果存在 children 的话，循环创建节点 -->
+		<tree
 			v-if="node.children.length"
 			v-for="(child,index) in node.children"
 			:key="index"
 			:node="child"
 			:length="node.children.length">
-    </tree>
+		</tree>
 	</div>
 </template>
 

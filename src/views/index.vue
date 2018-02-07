@@ -1,40 +1,40 @@
 <template>
   <div class="index">
     <div class="commonParam">
-        <button class="btn btn-primary">url</button>
-        <input type="text" v-model="url" class="form-control" style="min-width: 300px;">
+      <button class="btn btn-primary">url</button>
+      <input type="text" v-model="url" class="form-control" style="min-width: 300px;">
     </div>
     <div class="commonParam">
-        <button class="btn btn-primary">call</button>
-        <input type="text" v-model="call" class="form-control">
+      <button class="btn btn-primary">call</button>
+      <input type="text" v-model="call" class="form-control">
     </div>
     <div class="commonParam">
-        <button class="btn btn-primary">ua</button>
-        <input type="text" v-model="ua" class="form-control">
+      <button class="btn btn-primary">ua</button>
+      <input type="text" v-model="ua" class="form-control">
     </div>
     <div class="commonParam">
-        <button class="btn btn-primary">signKey</button>
-        <input type="text" v-model="signKey" class="form-control">
+      <button class="btn btn-primary">signKey</button>
+      <input type="text" v-model="signKey" class="form-control">
     </div>
 
     <tree :node="root" length="1" ref="treeParent"></tree>
 
     <div style="margin: 35px;">
-        <button class="btn btn-success" @click="preview">Preview</button>
-        <button class="btn btn-success" @click="test">Test</button>
+      <button class="btn btn-success" @click="preview">Preview</button>
+      <button class="btn btn-success" @click="test">Test</button>
     </div>
 
     <div class="container-fluid">
-        <div class="row">
-            <!-- <div class="col-sm-6">
-                <div class="text-center">原始数据</div>
-                <pre>{{originData}}</pre>
-            </div> -->
-            <div class="col-sm-12" v-if="previewParamsData">
-                <div class="text-center">预览请求参数</div>
-                <pre>{{previewParamsData}}</pre>
-            </div>
+      <div class="row">
+        <!-- <div class="col-sm-6">
+          <div class="text-center">原始数据</div>
+          <pre>{{originData}}</pre>
+        </div> -->
+        <div class="col-sm-12" v-if="previewParamsData">
+          <div class="text-center">预览请求参数</div>
+          <pre>{{previewParamsData}}</pre>
         </div>
+      </div>
     </div>
 
     <div style="width: 100%;margin: 20px 0;border: 1px dotted #000;"></div>
@@ -42,12 +42,12 @@
     <loading v-show="isLoading"></loading>
 
     <div class="container-fluid" v-if="httpResult">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="text-center">请求响应<span v-show="httpResultStatus">成功</span><span v-show="!httpResultStatus">失败</span></div>
-                <pre :class="{httpSuccess: httpResultStatus, httpFail: !httpResultStatus}">{{httpResult}}</pre>
-            </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="text-center">请求响应<span v-show="httpResultStatus">成功</span><span v-show="!httpResultStatus">失败</span></div>
+          <pre :class="{httpSuccess: httpResultStatus, httpFail: !httpResultStatus}">{{httpResult}}</pre>
         </div>
+      </div>
     </div>
   </div>
 </template>
