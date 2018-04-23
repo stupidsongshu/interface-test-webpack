@@ -63,7 +63,8 @@ export default {
 	},
 	methods: {
 		add: function() {
-			if (val = prompt('增')) {
+			var val = prompt('增')
+			if (val) {
 				if (val.trim() === '') {
 					alert('参数key值不能为空')
 					return
@@ -84,13 +85,15 @@ export default {
 			}
 		},
 		edit: function() {
-			if (val = prompt('改')) {
+			var val = prompt('改')
+			if (val) {
 				this.node.name = val
 			}
 		},
 		remove: function() {
 			var _this = this
-			if (confirm('删')) {
+			var val = confirm('删')
+			if (val) {
 				if (this.$parent.node) {
 					// 找到上级，循环上级 children 列表，删除选中的
 					this.$parent.node.children.forEach(function(item, index) {
