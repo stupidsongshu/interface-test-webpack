@@ -165,6 +165,19 @@ export default {
     //     console.log(info)
     // },
     preview() {
+      // ES5
+      // var parse = function(arr) {
+      //     return arr.reduce(function(accumulator, currentVal) {
+      //         if (currentVal.children.length === 0) {
+      //             accumulator[currentVal.name] = currentVal.val
+      //         } else {
+      //             accumulator[currentVal.name] = parse(currentVal.children)
+      //         }
+      //         return accumulator
+      //     }, {})
+      // }
+
+      // ES6
       const parse = arr => arr.reduce((obj, { name, val, children }) => ({
             ...obj,
             ...{
